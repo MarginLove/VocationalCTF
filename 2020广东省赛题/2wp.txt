@@ -1,0 +1,42 @@
+1、使用Wireshark抓包分析软件查看并分析Kali Linux的/root目录下dump.pcapng数据包文件，
+找到黑客的IP地址，并将黑客的IP地址作为Flag值（如：172.16.1.1）提交；
+
+2.继续分析数据包文件dump.pcapng分析出黑客通过工具对目标服务器的哪些服务进行了密码暴
+力枚举渗透测试，将服务对应的端口依照从小到大的顺序依次排列作为Flag值（如：77/88/99/166）提交；
+
+3.继续分析数据包文件dump.pcapng，找出黑客已经获取到的目标服务器基本信息，
+请将黑客获取到的目标服务器主机名作为Flag值提交；
+
+4.黑客扫描后可能首先对目标服务器的某个服务实施了攻击，
+继续查看数据包文件dump.pcapng分析出黑客成功破解了哪个服务的密码，
+并将该服务的版本号作为Flag值(如：5.1.10)提交；
+
+5.继续分析数据包文件dump.pcapng，黑客通过数据库写入了木马,
+将写入的木马名称作为Flag值提交（名称不包含后缀）；
+
+6.继续分析数据包文件dump.pcapng，黑客通过数据库写入了木马,
+将黑客写入的一句话木马的连接密码作为Flag值提交；
+     
+
+
+
+
+
+
+
+
+1、tcp.connection.syn 
+flag：172.16.1.110
+2、tcp.connection.syn and ip.src == 172.16.1.110
+flag：21/22/23/3306
+3、ip.addr == 172.16.1.110 and telnet contains "login"
+Flag：SecTestLabs
+4、ip.addr == 172.16.1.110 and tcp.port == 3306
+Flag：5.7.26
+5、与上题分析方法一致
+Flag：horse
+6、与上题分析方法一致
+Flag：lqsym
+7、http contains "horse.php"
+Flag：passwd
+ftp contains "230"

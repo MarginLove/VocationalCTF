@@ -1,0 +1,7 @@
+F1、urllib
+F2、open
+F3、write
+F4、ip
+F5、num
+F6、except
+F7、close
